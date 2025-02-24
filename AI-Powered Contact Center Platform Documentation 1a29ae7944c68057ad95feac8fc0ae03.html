@@ -1,0 +1,798 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>AI-Powered Contact Center Platform Documentation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a29ae79-44c6-8057-ad95-feac8fc0ae03" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_great_sandy_desert_australia.jpg" style="object-position:center 70%"/><h1 class="page-title"><strong>AI-Powered Contact Center Platform Documentation</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="1a29ae79-44c6-8042-b428-c996873b884f" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1a29ae79-44c6-804b-a49c-d020c4955291"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="1a29ae79-44c6-80a0-81a6-cef950f110ea" class=""><em>This documentation is subject to change as requirements evolve. All features, timelines, and specifications mentioned herein are preliminary and may be modified based on business needs and technical constraints.</em></p></div></figure><h2 id="1a29ae79-44c6-8079-9298-e072f0892f61" class=""><strong>Executive Summary</strong></h2><p id="1a29ae79-44c6-8030-ab59-f3a496730d38" class="">Symflowise is an advanced AI-powered contact center platform that revolutionizes customer service through intelligent automation, seamless human integration, and comprehensive analytics.</p><p id="1a29ae79-44c6-8055-9ac9-c3515dff03aa" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1a29ae79-44c6-80b9-aad4-f4a155f36062"><div style="font-size:1.5em"><span class="icon">🔑</span></div><div style="width:100%"><h3 id="1a29ae79-44c6-80fd-83b6-c1dccd108c33" class="">Key Differentiators</h3><p id="1a29ae79-44c6-80f4-b291-e3616577e1f4" class=""><br/>• Screen sharing capabilities with advanced privacy filters<br/>• Multi-model AI support with Gemini integration<br/>• Personalized AI-driven agent training modules<br/>• Compliance-focused review process with automated escalation<br/>• Proprietary AI-driven sentiment analysis with 95% accuracy<br/>• Seamless human handoff with zero context loss<br/>• Industry-first predictive customer routing<br/>• Real-time AI guidance for agents<br/></p></div></figure><p id="1a29ae79-44c6-807d-bf25-f4c3f02fe362" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1a29ae79-44c6-80c7-a3e8-fae7a0788d08"><div style="font-size:1.5em"><span class="icon">👉🏼</span></div><div style="width:100%"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-teal">Wireframes for different Modules - </mark><mark class="highlight-blue">Please expand to view</mark></summary><div class="indented"><h3 id="1a29ae79-44c6-80a5-b332-fbe4cf32bcef" class="">Landing Page/Onboarding: </h3><figure id="1a29ae79-44c6-80f2-9999-d32ac9331732"><div class="source"><a href="https://onboarding-contact-center.created.app/landing-vision-page">https://onboarding-contact-center.created.app/landing-vision-page</a></div></figure><p id="1a29ae79-44c6-803c-bcfe-f21dfdf9f790" class="">
+</p><h1 id="1a29ae79-44c6-80d7-a41b-cb0330e183be" class="">Contact Center System Documentation</h1><blockquote id="1a29ae79-44c6-80dd-b455-f9e86ae00654" class="">Note: All module links in this documentation are fully operational and can be accessed through any standard web browser.</blockquote><h2 id="1a29ae79-44c6-8014-b251-fcf1ba065bc6" class="">Support &amp; Customer Service</h2><h3 id="1a29ae79-44c6-802d-98b3-ece6256a21cb" class="">Voice Agent Onboarding</h3><p id="1a29ae79-44c6-80ad-89cb-fbc7bbea6798" class=""><code><a href="https://onboarding-contact-center.created.app/support/voice-agents">https://onboarding-contact-center.created.app/support/voice-agents</a></code> <br/>Description: Step-by-step onboarding chat with guided workflows.<br/></p><h3 id="1a29ae79-44c6-805c-b300-c5d4136ddcf1" class="">Support Hub</h3><p id="1a29ae79-44c6-80e6-bb93-e3cec793bde5" class=""><code><a href="https://onboarding-contact-center.created.app/support">https://onboarding-contact-center.created.app/support</a></code> <br/>Description: Central support management interface.<br/></p><h3 id="1a29ae79-44c6-8042-9313-ef5b428e1eeb" class="">Ticket Management</h3><p id="1a29ae79-44c6-8079-ac96-e4c280b60411" class=""><code><a href="https://onboarding-contact-center.created.app/support/tickets/manage">https://onboarding-contact-center.created.app/support/tickets/manage</a></code> <br/>Description: Comprehensive ticket handling system.<br/></p><h3 id="1a29ae79-44c6-8058-8d26-d8a5a94c0abb" class="">Team Collaboration</h3><p id="1a29ae79-44c6-806c-8f9e-dfe910a16a12" class=""><code><a href="https://onboarding-contact-center.created.app/support/team">https://onboarding-contact-center.created.app/support/team</a></code> <br/>Description: Collaborative workspace for team coordination.<br/></p><h3 id="1a29ae79-44c6-802b-9962-d9418dd227f3" class="">Agent Workspace</h3><p id="1a29ae79-44c6-80c4-9cdc-cdfd3ae8775e" class=""><code><a href="https://onboarding-contact-center.created.app/support/workspace">https://onboarding-contact-center.created.app/support/workspace</a></code> <br/>Description: Dedicated agent working environment.<br/></p><h3 id="1a29ae79-44c6-8028-aac0-f87a16335bb9" class="">Chat History</h3><p id="1a29ae79-44c6-8047-9327-d7b6290ee1f7" class=""><code><a href="https://onboarding-contact-center.created.app/support/chat-history">https://onboarding-contact-center.created.app/support/chat-history</a></code> <br/>Description: Historical chat records and interactions.<br/></p><h2 id="1a29ae79-44c6-8027-adb1-e1d5fb333776" class="">Training &amp; Development</h2><h3 id="1a29ae79-44c6-8016-b070-dae19f9424af" class="">Training Center</h3><p id="1a29ae79-44c6-80e1-8ba2-f74c7f244598" class=""><code><a href="https://onboarding-contact-center.created.app/training-center">https://onboarding-contact-center.created.app/training-center</a></code> <br/>Description: Centralized training resource hub.<br/></p><h3 id="1a29ae79-44c6-8011-8b60-c91a9a792474" class="">Skill Assessment</h3><p id="1a29ae79-44c6-80ef-8f71-e445f0a830aa" class=""><code><a href="https://onboarding-contact-center.created.app/training/assessment">https://onboarding-contact-center.created.app/training/assessment</a></code> <br/>Description: Competency evaluation platform.<br/></p><h3 id="1a29ae79-44c6-80a6-b9b3-c7f168be4efc" class="">Learning Paths</h3><p id="1a29ae79-44c6-80be-ad04-d1353171c5ad" class=""><code>https://onboarding-contact-center.created.app/learning-paths </code><br/>Description: Structured learning progression tracks.<br/></p><h3 id="1a29ae79-44c6-801b-9303-fe5d617f2e7a" class="">Certification Center</h3><p id="1a29ae79-44c6-805d-aef0-d7dfc49be7f5" class=""><code><a href="https://onboarding-contact-center.created.app/training/certification">https://onboarding-contact-center.created.app/training/certification</a></code> <br/>Description: Professional certification management.<br/></p><h3 id="1a29ae79-44c6-807a-829e-d4dfd7a99197" class="">Training Analytics</h3><p id="1a29ae79-44c6-80c7-976a-f67e0a489e2c" class=""><code>https://onboarding-contact-center.created.app/training-analytics</code><br/>Description: Training performance metrics and insights.<br/></p><h2 id="1a29ae79-44c6-80fb-9cbf-f449285540d5" class="">Analytics &amp; Reporting</h2><h3 id="1a29ae79-44c6-8097-9de8-d94c9fde17b5" class="">Analytics Dashboard</h3><p id="1a29ae79-44c6-806a-9d0d-d53583a8cd11" class=""><code>https://onboarding-contact-center.created.app/analytics</code><br/>Description: Comprehensive performance analytics.<br/></p><h3 id="1a29ae79-44c6-8091-9f37-c9433bdb2aa9" class="">Reports Center</h3><p id="1a29ae79-44c6-8053-b8f0-df789fc579fe" class=""><code>https://onboarding-contact-center.created.app/analytics/reports</code><br/>Description: Detailed reporting and analysis tools.<br/></p><h3 id="1a29ae79-44c6-80c5-993b-c129469a20cf" class="">Quality Assurance</h3><p id="1a29ae79-44c6-80f4-8f07-fda5bee72eaa" class=""><code>https://onboarding-contact-center.created.app/compliance/qa</code><br/>Description: Quality monitoring and assessment.<br/></p><h2 id="1a29ae79-44c6-80d9-bcec-cf448c6c5097" class="">Administration</h2><h3 id="1a29ae79-44c6-8054-801b-d2ab198b6220" class="">System Settings</h3><p id="1a29ae79-44c6-80c9-b870-f38ff6c24054" class=""><code>https://onboarding-contact-center.created.app/admin/system</code><br/>Description: Core system configuration.<br/></p><h3 id="1a29ae79-44c6-8093-9fd1-d525786d8bbb" class="">User Management</h3><p id="1a29ae79-44c6-800a-b52f-c8d83b2d34c2" class=""><code>https://onboarding-contact-center.created.app/admin/users</code><br/>Description: User account administration.<br/></p><h3 id="1a29ae79-44c6-806f-8fb6-cb814d76b1cf" class="">Role Management</h3><p id="1a29ae79-44c6-80aa-b974-f52abd0abfd7" class=""><code>https://onboarding-contact-center.created.app/admin/roles</code><br/>Description: Access control and role definition.<br/></p><h3 id="1a29ae79-44c6-80d1-bf72-ce744c577ccd" class="">Integration Management</h3><p id="1a29ae79-44c6-801f-94ee-cfbe16c01867" class=""><code>https://onboarding-contact-center.created.app/integrations/manage</code><br/>Description: Third-party service integration.<br/></p><h2 id="1a29ae79-44c6-8075-aa43-f02621bd1202" class="">Compliance &amp; Security</h2><h3 id="1a29ae79-44c6-80e9-b146-c0fa58abc999" class="">Compliance Center</h3><p id="1a29ae79-44c6-8063-89ad-d5d875cf76a2" class=""><code>https://onboarding-contact-center.created.app/compliance-center</code><br/>Description: Regulatory compliance management.<br/></p><h3 id="1a29ae79-44c6-8095-84af-e86c418e2c8c" class="">Compliance Dashboard</h3><p id="1a29ae79-44c6-8014-b2d6-d4a79e8eb153" class=""><code>https://onboarding-contact-center.created.app/compliance/dashboard</code><br/>Description: Compliance monitoring and reporting.<br/></p><h2 id="1a29ae79-44c6-80ea-8008-e27423627d37" class="">Integration &amp; API</h2><h3 id="1a29ae79-44c6-8016-99db-f439ea5c6c3f" class="">Integration Hub</h3><p id="1a29ae79-44c6-8023-9eb3-d16f1dff784a" class=""><code>https://onboarding-contact-center.created.app/integrations</code><br/>Description: Integration management center.<br/></p><h3 id="1a29ae79-44c6-80a6-975a-e58666d8101f" class="">API Status Dashboard</h3><p id="1a29ae79-44c6-8033-a586-eb5ee47493b9" class=""><code>https://onboarding-contact-center.created.app/integrations/api-status</code><br/>Description: API health and performance monitoring.<br/></p><h2 id="1a29ae79-44c6-80f1-afb6-fe03199ce0b4" class="">Help &amp; Support</h2><h3 id="1a29ae79-44c6-80f3-a839-e731900f3d57" class="">Help &amp; FAQ</h3><p id="1a29ae79-44c6-8001-bd4d-fa7c0b04dc7f" class=""><code>https://onboarding-contact-center.created.app/help-faq</code><br/>Description: User guidance and frequently asked questions.<br/></p><h2 id="1a29ae79-44c6-8026-ab5b-d1baf8bc9452" class="">Customer Access</h2><h3 id="1a29ae79-44c6-802b-876a-ddbbcabdcbda" class="">Customer Portal</h3><p id="1a29ae79-44c6-80fe-b76f-d20c174eb77e" class=""><code>https://onboarding-contact-center.created.app/customer-portal</code><br/>Description: Customer self-service interface.<br/></p><h3 id="1a29ae79-44c6-80d3-a666-f8f2e256c9df" class="">Landing Platform</h3><p id="1a29ae79-44c6-8066-8d0c-d43c36a62c4e" class=""><code>https://onboarding-contact-center.created.app/landing-platform</code><br/>Description: Main entry point for customers.<br/></p></div></details></div></figure><hr id="1a29ae79-44c6-80ab-a6d4-ef1415b6318f"/><p id="1a29ae79-44c6-8037-ac29-f728b873d6ba" class="">
+</p><h2 id="1a29ae79-44c6-80de-abfb-e981722f24bf" class=""><strong>I. Platform Features and Requirements</strong></h2><h3 id="1a29ae79-44c6-803c-84ff-e7a279d24452" class=""><strong>A. Core Requirements</strong></h3><table id="1a29ae79-44c6-8064-a731-ded615813ae3" class="simple-table"><thead class="simple-table-header"><tr id="1a29ae79-44c6-807a-bac5-d359d2fd21d9"><th id="pl^Z" class="simple-table-header-color simple-table-header">Requirement</th><th id="I|p]" class="simple-table-header-color simple-table-header">Description</th><th id="GabT" class="simple-table-header-color simple-table-header">Differentiating Factors</th></tr></thead><tbody><tr id="1a29ae79-44c6-80db-ad16-fe08123dac0e"><th id="pl^Z" class="simple-table-header-color simple-table-header">Multi-Channel Support</th><td id="I|p]" class="">Voice, chat, and web portal integration</td><td id="GabT" class="">Unified context across all channels</td></tr><tr id="1a29ae79-44c6-802b-b1e1-fc75ea007572"><th id="pl^Z" class="simple-table-header-color simple-table-header">AI Integration</th><td id="I|p]" class="">Smart ticket handling and routing</td><td id="GabT" class="">Real-time learning and adaptation</td></tr><tr id="1a29ae79-44c6-8068-9a29-f84d5bbaf4e1"><th id="pl^Z" class="simple-table-header-color simple-table-header">Human Escalation</th><td id="I|p]" class="">Contextual handoff to human agents</td><td id="GabT" class="">Zero information loss during transition</td></tr><tr id="1a29ae79-44c6-8041-b8ed-e4b83cb6fa0d"><th id="pl^Z" class="simple-table-header-color simple-table-header">Analytics &amp; Reporting</th><td id="I|p]" class="">Comprehensive performance metrics</td><td id="GabT" class="">Predictive trend analysis</td></tr><tr id="1a29ae79-44c6-8021-96ef-e1ffa29ae32f"><th id="pl^Z" class="simple-table-header-color simple-table-header">User Interface</th><td id="I|p]" class="">Intuitive design for agents and customers</td><td id="GabT" class="">Customizable workflows</td></tr><tr id="1a29ae79-44c6-80de-a1b2-d84781fc7b1e"><th id="pl^Z" class="simple-table-header-color simple-table-header">Compliance</th><td id="I|p]" class="">Industry-standard security measures</td><td id="GabT" class="">Automated compliance checking</td></tr></tbody></table><h3 id="1a29ae79-44c6-80d7-a74e-cc3484a1adcb" class=""><strong>B. Role-Based Functional Requirements and System Roles</strong></h3><h3 id="1a29ae79-44c6-80c1-8c81-d33c39c989d4" class=""><strong>1. Super Admin</strong></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1a29ae79-44c6-80e4-a175-c8dafcfd6700"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><p id="1a29ae79-44c6-80e2-8041-f3772b0f6847" class="">Super admin is being referred to our client Georges. </p></div></figure><table id="1a29ae79-44c6-807a-ac4f-f699a48124ba" class="simple-table"><thead class="simple-table-header"><tr id="1a29ae79-44c6-8083-9a59-f7655fb97bc1"><th id="=C`m" class="simple-table-header-color simple-table-header">Feature Category</th><th id="Bf`j" class="simple-table-header-color simple-table-header" style="width:356.998291015625px">Functional Requirements</th><th id="=hGD" class="simple-table-header-color simple-table-header">Access Level</th></tr></thead><tbody><tr id="1a29ae79-44c6-809c-acce-f5c89b4413e2"><th id="=C`m" class="simple-table-header-color simple-table-header">User Management</th><td id="Bf`j" class="" style="width:356.998291015625px">- Create/modify/delete all user types<br/>- Assign roles and permissions<br/>- Manage department hierarchies<br/></td><td id="=hGD" class="">Full Access</td></tr><tr id="1a29ae79-44c6-807f-a412-dcd2f383c8da"><th id="=C`m" class="simple-table-header-color simple-table-header">System Configuration</th><td id="Bf`j" class="" style="width:356.998291015625px">- Configure system-wide settings<br/>- Manage API integrations<br/>- Set security parameters<br/></td><td id="=hGD" class="">Full Access</td></tr><tr id="1a29ae79-44c6-80bc-9805-d80ec68d6352"><th id="=C`m" class="simple-table-header-color simple-table-header">Analytics</th><td id="Bf`j" class="" style="width:356.998291015625px">- Access all analytics dashboards<br/>- Generate custom reports<br/>- Export system-wide data<br/></td><td id="=hGD" class="">Full Access</td></tr><tr id="1a29ae79-44c6-801f-91e2-f3509c4f2167"><th id="=C`m" class="simple-table-header-color simple-table-header">Compliance</th><td id="Bf`j" class="" style="width:356.998291015625px">- Set compliance rules<br/>- Review audit logs<br/>- Manage security policies<br/></td><td id="=hGD" class="">Full Access</td></tr><tr id="1a29ae79-44c6-80dd-b679-cae69980d7a7"><th id="=C`m" class="simple-table-header-color simple-table-header">AI Management</th><td id="Bf`j" class="" style="width:356.998291015625px">- Configure AI models<br/>- Set automation rules<br/>- Manage knowledge base<br/></td><td id="=hGD" class="">Full Access</td></tr></tbody></table><h3 id="1a29ae79-44c6-8095-8b82-e28ccc235886" class=""><strong>2. Admin</strong></h3><table id="1a29ae79-44c6-8078-a0f5-f1214a5aa939" class="simple-table"><thead class="simple-table-header"><tr id="1a29ae79-44c6-800c-8f1c-ea607463cf30"><th id="RrJk" class="simple-table-header-color simple-table-header">Feature Category</th><th id="GvDm" class="simple-table-header-color simple-table-header" style="width:461.00001525878906px">Functional Requirements</th><th id="rnZh" class="simple-table-header-color simple-table-header">Access Level</th></tr></thead><tbody><tr id="1a29ae79-44c6-80f0-a34b-e6192fb31a30"><th id="RrJk" class="simple-table-header-color simple-table-header">User Management</th><td id="GvDm" class="" style="width:461.00001525878906px">- Manage team members- Assign tasks- Monitor performance</td><td id="rnZh" class="">Department Level</td></tr><tr id="1a29ae79-44c6-8033-bc1f-f0a8f7a31469"><th id="RrJk" class="simple-table-header-color simple-table-header">Analytics</th><td id="GvDm" class="" style="width:461.00001525878906px">- View department metrics- Generate team reports</td><td id="rnZh" class="">Department Level</td></tr><tr id="1a29ae79-44c6-80c4-ad41-ed1f4494e82a"><th id="RrJk" class="simple-table-header-color simple-table-header">Operations</th><td id="GvDm" class="" style="width:461.00001525878906px">- Monitor queue status- Manage workflows- Handle escalations</td><td id="rnZh" class="">Department Level</td></tr></tbody></table><h3 id="1a29ae79-44c6-8061-9665-cc191576ec57" class=""><strong>3. Agent</strong></h3><table id="1a29ae79-44c6-8031-9e3e-f05df1f5d4af" class="simple-table"><thead class="simple-table-header"><tr id="1a29ae79-44c6-80d4-af57-d503abbb3247"><th id="DOCt" class="simple-table-header-color simple-table-header">Feature Category</th><th id="]]O[" class="simple-table-header-color simple-table-header">Functional Requirements</th><th id="MjxX" class="simple-table-header-color simple-table-header">Access Level</th></tr></thead><tbody><tr id="1a29ae79-44c6-8095-8521-ea7b84cd09f5"><th id="DOCt" class="simple-table-header-color simple-table-header">Customer Service</th><td id="]]O[" class="">- Handle customer interactions<br/>- Access knowledge base<br/>- Update ticket status<br/></td><td id="MjxX" class="">Individual Level</td></tr><tr id="1a29ae79-44c6-8031-9684-d9efccd72d4f"><th id="DOCt" class="simple-table-header-color simple-table-header">Performance</th><td id="]]O[" class="">- View personal metrics<br/>- Access training modules<br/>- Submit reports<br/></td><td id="MjxX" class="">Individual Level</td></tr></tbody></table><h3 id="1a29ae79-44c6-80bc-8240-ca9edd349f82" class=""><strong>4. Customer</strong></h3><table id="1a29ae79-44c6-80e9-8e95-e8cfdd1dcfb1" class="simple-table"><thead class="simple-table-header"><tr id="1a29ae79-44c6-8034-8604-d8142e4d3ba3"><th id=";CWu" class="simple-table-header-color simple-table-header">Feature Category</th><th id="StFr" class="simple-table-header-color simple-table-header" style="width:427.6163330078125px">Functional Requirements</th><th id="r}&gt;G" class="simple-table-header-color simple-table-header">Access Level</th></tr></thead><tbody><tr id="1a29ae79-44c6-80c0-afa3-cb5c3fbe3965"><th id=";CWu" class="simple-table-header-color simple-table-header">Support Access</th><td id="StFr" class="" style="width:427.6163330078125px">- Create/view tickets<br/>- Access self-service<br/><br/>- Chat with AI/agents<br/></td><td id="r}&gt;G" class="">Limited Access</td></tr><tr id="1a29ae79-44c6-8034-998e-effa91fe3d82"><th id=";CWu" class="simple-table-header-color simple-table-header">Account Management</th><td id="StFr" class="" style="width:427.6163330078125px">- Update profile<br/>- View interaction history<br/>- Provide feedback<br/></td><td id="r}&gt;G" class="">Limited Access</td></tr></tbody></table><h3 id="1a29ae79-44c6-807b-8ed3-dccb376a50d1" class=""><strong>B. Competitive Tools Analysis</strong></h3><table id="1a29ae79-44c6-803e-aa9b-ce3ab5e5539a" class="simple-table"><thead class="simple-table-header"><tr id="1a29ae79-44c6-80b8-adb6-e289365f59ed"><th id="Fi{I" class="simple-table-header-color simple-table-header">Tool</th><th id="{^b^" class="simple-table-header-color simple-table-header">Key Features</th><th id="&lt;pDD" class="simple-table-header-color simple-table-header">Symflowise Differentiation</th></tr></thead><tbody><tr id="1a29ae79-44c6-807f-a070-e94cdeb9b14b"><th id="Fi{I" class="simple-table-header-color simple-table-header">SimplePhones</th><td id="{^b^" class="">Google Text-to-Speech technology</td><td id="&lt;pDD" class="">Advanced multi-model AI with Gemini</td></tr><tr id="1a29ae79-44c6-80c1-9686-e0205e381956"><th id="Fi{I" class="simple-table-header-color simple-table-header">Agent4 AI</th><td id="{^b^" class="">24/7 virtual assistant</td><td id="&lt;pDD" class="">AI-human hybrid approach with seamless transitions</td></tr><tr id="1a29ae79-44c6-8005-bf47-f59b857a4bac"><th id="Fi{I" class="simple-table-header-color simple-table-header">Callin.io</th><td id="{^b^" class="">Virtual assistants for engagement</td><td id="&lt;pDD" class="">Screen sharing with privacy filters</td></tr><tr id="1a29ae79-44c6-8045-b7f6-c74ced0dfa9c"><th id="Fi{I" class="simple-table-header-color simple-table-header">PreCallAI</th><td id="{^b^" class="">Automated call handling</td><td id="&lt;pDD" class="">Personalized agent training modules</td></tr><tr id="1a29ae79-44c6-8008-8abe-dcf24db4407c"><th id="Fi{I" class="simple-table-header-color simple-table-header">Autocalls.ai</th><td id="{^b^" class="">Intelligent voice interactions</td><td id="&lt;pDD" class="">Compliance-focused review process</td></tr><tr id="1a29ae79-44c6-8099-828b-c919fa9e7d9b"><th id="Fi{I" class="simple-table-header-color simple-table-header">Voctiv</th><td id="{^b^" class="">24/7 call handling</td><td id="&lt;pDD" class="">Multi-channel support with unified context</td></tr><tr id="1a29ae79-44c6-8054-b067-fe60d132c168"><th id="Fi{I" class="simple-table-header-color simple-table-header">Hellocaller.ai</th><td id="{^b^" class="">Spam call filtering</td><td id="&lt;pDD" class="">Advanced threat detection with ML</td></tr><tr id="1a29ae79-44c6-8053-8673-fb27c30da4f7"><th id="Fi{I" class="simple-table-header-color simple-table-header">Zencall</th><td id="{^b^" class="">Information sharing via text/email</td><td id="&lt;pDD" class="">Comprehensive omnichannel integration</td></tr></tbody></table><h3 id="1a29ae79-44c6-804c-9582-c2ba4c65ba87" class=""><strong>C. Unique Feature Set</strong></h3><h3 id="1a29ae79-44c6-8079-a6be-ce56a34f6609" class=""><strong>1. Screen Sharing Innovation</strong></h3><ul id="1a29ae79-44c6-8057-8682-e2cfc72e0d82" class="bulleted-list"><li style="list-style-type:disc">Privacy filters for sensitive information</li></ul><ul id="1a29ae79-44c6-80ab-a6ed-f475337fe5b2" class="bulleted-list"><li style="list-style-type:disc">Real-time collaboration tools</li></ul><ul id="1a29ae79-44c6-8033-929d-d0a859605229" class="bulleted-list"><li style="list-style-type:disc">Secure document sharing</li></ul><h3 id="1a29ae79-44c6-80ec-b700-f55dc7b4bd67" class=""><strong>2. AI Training Modules</strong></h3><ul id="1a29ae79-44c6-8056-b239-e5ca634a0be3" class="bulleted-list"><li style="list-style-type:disc">Individual learning paths</li></ul><ul id="1a29ae79-44c6-800c-b8c1-ff528a4cfdfc" class="bulleted-list"><li style="list-style-type:disc">AI-driven performance assessment</li></ul><ul id="1a29ae79-44c6-80f3-ab71-f6a7de25bc9a" class="bulleted-list"><li style="list-style-type:disc">Documentation updates based on training data</li></ul><h3 id="1a29ae79-44c6-8006-9ee6-dba2b825cb54" class=""><strong>3. Compliance Framework</strong></h3><ul id="1a29ae79-44c6-80fb-b210-f0183b0a6336" class="bulleted-list"><li style="list-style-type:disc">AI to human escalation workflow</li></ul><ul id="1a29ae79-44c6-80a9-a674-df708e727e2f" class="bulleted-list"><li style="list-style-type:disc">Quality control mechanisms</li></ul><ul id="1a29ae79-44c6-80aa-9e3a-d7af82802136" class="bulleted-list"><li style="list-style-type:disc">Financial sector-specific requirements</li></ul><h2 id="1a29ae79-44c6-8092-a215-e26138d34af4" class=""><strong>II. System Architecture &amp; Workflows</strong></h2><h3 id="1a29ae79-44c6-80d0-8f9d-ce966a6c056a" class=""><strong>A. Platform Workflow</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-8076-84e7-f96e16be1675" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[User Login] --&gt; B[Web Portal]
+    B --&gt; C[Submit Ticket/Issue]
+    C --&gt; D[First-level AI Support]
+    D --&gt; E{Complex Issue?}
+    E --&gt;|Yes| F[Escalate to Human Agent]
+    E --&gt;|No| G[AI Resolution]
+    F --&gt; H[User Notification]
+    G --&gt; H
+    H --&gt; I[Check Ticket Status]
+</code></pre><h3 id="1a29ae79-44c6-803e-8637-d89cdca3ff84" class=""><strong>B. Integration Architecture</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-8077-9924-fd378bb5519e" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TB
+    A[Client] --&gt; B((Load Balancer))
+    B --&gt; C[Server 1]
+    B --&gt; D[Server 2]
+    B --&gt; E[Server 3]
+    C --&gt; F[(Database)]
+    D --&gt; F
+    E --&gt; F
+</code></pre><h3 id="1a29ae79-44c6-80ef-86cf-f58c88051e22" class=""><strong>C. Security Architecture</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-80d7-8afd-de5dcb476bca" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart LR
+    A[User Request] --&gt; B{WAF}
+    B --&gt; C[DDoS Protection]
+    C --&gt; D[Load Balancer]
+    D --&gt; E[Application Server]
+    E --&gt; F{Data Encryption}
+    F --&gt; G[(Encrypted Storage)]
+</code></pre><h2 id="1a29ae79-44c6-800d-8194-f41f3e821064" class=""><strong>III. Risk Assessment and Mitigation</strong></h2><table id="1a29ae79-44c6-808d-90ee-e62897aeb1fc" class="simple-table"><thead class="simple-table-header"><tr id="1a29ae79-44c6-8062-a1d0-fc446f4aa896"><th id="L:qA" class="simple-table-header-color simple-table-header">Risk Category</th><th id="{kec" class="simple-table-header-color simple-table-header">Potential Risks</th><th id="sRI@" class="simple-table-header-color simple-table-header">Impact</th><th id="wE{}" class="simple-table-header-color simple-table-header">Likelihood</th><th id="XTmK" class="simple-table-header-color simple-table-header">Mitigation Strategy</th></tr></thead><tbody><tr id="1a29ae79-44c6-80ac-8689-ff110d54cfa8"><th id="L:qA" class="simple-table-header-color simple-table-header">Security</th><td id="{kec" class="">Data breaches</td><td id="sRI@" class="">High</td><td id="wE{}" class="">Medium</td><td id="XTmK" class="">- End-to-end encryption\n- Regular security audits\n- Access control policies</td></tr><tr id="1a29ae79-44c6-801a-90af-e3560b22f06f"><th id="L:qA" class="simple-table-header-color simple-table-header">Compliance</th><td id="{kec" class="">Regulatory violations</td><td id="sRI@" class="">High</td><td id="wE{}" class="">Low</td><td id="XTmK" class="">- Automated compliance checks\n- Regular policy updates\n- Staff training</td></tr><tr id="1a29ae79-44c6-80d3-8d6e-f5c648d82958"><th id="L:qA" class="simple-table-header-color simple-table-header">Technical</th><td id="{kec" class="">System downtime</td><td id="sRI@" class="">High</td><td id="wE{}" class="">Low</td><td id="XTmK" class="">- Redundant systems\n- Auto-scaling\n- 24/7 monitoring</td></tr><tr id="1a29ae79-44c6-8089-9c91-f2829eb7ea94"><th id="L:qA" class="simple-table-header-color simple-table-header">Operational</th><td id="{kec" class="">AI misclassification</td><td id="sRI@" class="">Medium</td><td id="wE{}" class="">Medium</td><td id="XTmK" class="">- Human oversight\n- Continuous model training\n- Performance monitoring</td></tr><tr id="1a29ae79-44c6-801a-a28a-d02669c9f2c1"><th id="L:qA" class="simple-table-header-color simple-table-header">Business</th><td id="{kec" class="">Market competition</td><td id="sRI@" class="">Medium</td><td id="wE{}" class="">High</td><td id="XTmK" class="">- Continuous innovation\n- Customer feedback loops\n- Feature differentiation</td></tr></tbody></table><h2 id="1a29ae79-44c6-8081-a674-d2990692dc45" class=""><strong>V. Business Model &amp; Target Markets</strong></h2><h3 id="1a29ae79-44c6-8057-b601-d498a3514d66" class=""><strong>A. Business Model</strong></h3><ul id="1a29ae79-44c6-8063-9d3c-c0fe0c9ee117" class="bulleted-list"><li style="list-style-type:disc">B2B SaaS platform</li></ul><ul id="1a29ae79-44c6-809e-84e0-ecaeaa7514d0" class="bulleted-list"><li style="list-style-type:disc">Customizable support channels</li></ul><ul id="1a29ae79-44c6-806f-9b53-de6b0e587780" class="bulleted-list"><li style="list-style-type:disc">Advanced analytics package</li></ul><h3 id="1a29ae79-44c6-8052-a1eb-d6abd3817f35" class=""><strong>B. Target Markets</strong></h3><ul id="1a29ae79-44c6-8059-a897-f2c2b0b5b05d" class="bulleted-list"><li style="list-style-type:disc">Primary: Africa, Canada, USA</li></ul><ul id="1a29ae79-44c6-80c1-a95b-f00d67df68b5" class="bulleted-list"><li style="list-style-type:disc">Focus on multilingual support</li></ul><ul id="1a29ae79-44c6-80cb-91ba-d60fcf502d11" class="bulleted-list"><li style="list-style-type:disc">Web portal optimization for African markets</li></ul><h2 id="1a29ae79-44c6-8051-8e87-fe8a39406e09" class=""><strong>VI. Success Metrics</strong></h2><table id="1a29ae79-44c6-8068-9ed0-c8b2e2499b6c" class="simple-table"><tbody><tr id="1a29ae79-44c6-8047-a7f0-dfafc96a50ba"><td id="t[&gt;z" class="">Metric</td><td id="FKVr" class="">Target</td><td id="SLqJ" class="">Industry Average</td></tr><tr id="1a29ae79-44c6-8090-808f-ebe11c1b0d65"><td id="t[&gt;z" class="">First Call Resolution</td><td id="FKVr" class="">&gt;80%</td><td id="SLqJ" class="">65%</td></tr><tr id="1a29ae79-44c6-805c-af14-ef9e3c33d89c"><td id="t[&gt;z" class="">Customer Satisfaction</td><td id="FKVr" class="">&gt;90%</td><td id="SLqJ" class="">75%</td></tr><tr id="1a29ae79-44c6-80b6-bcdc-db143c05e349"><td id="t[&gt;z" class="">Average Handle Time</td><td id="FKVr" class="">&lt;4 mins</td><td id="SLqJ" class="">6 mins</td></tr><tr id="1a29ae79-44c6-804b-a776-fa89697d3ccf"><td id="t[&gt;z" class="">AI Resolution Rate</td><td id="FKVr" class="">&gt;60%</td><td id="SLqJ" class="">40%</td></tr><tr id="1a29ae79-44c6-80ce-b49c-ea49d7f09bc1"><td id="t[&gt;z" class="">Spam Call Reduction</td><td id="FKVr" class="">95%</td><td id="SLqJ" class="">80%</td></tr><tr id="1a29ae79-44c6-80e2-aff0-ebd54dca3d91"><td id="t[&gt;z" class="">Agent Performance Improvement</td><td id="FKVr" class="">18%</td><td id="SLqJ" class="">10%</td></tr></tbody></table><h2 id="1a29ae79-44c6-80ce-98f9-d617689ef874" class=""><strong>VII. Role-Based User Journeys</strong></h2><h3 id="1a29ae79-44c6-80ac-9c8c-f80f7941c244" class=""><strong>A. Customer Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-8074-ae78-e710bbbfb3d4" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[Customer Login] --&gt; B[Browse Knowledge Base]
+    B --&gt; C{Issue Resolved?}
+    C --&gt;|No| D[Create Support Ticket]
+    C --&gt;|Yes| E[End Journey]
+    D --&gt; F[AI Agent Interaction]
+    F --&gt; G{Complex Issue?}
+    G --&gt;|Yes| H[Human Agent Support]
+    G --&gt;|No| I[AI Resolution]
+    H --&gt; J[Issue Resolution]
+    I --&gt; J
+    J --&gt; K[Feedback Submission]
+    K --&gt; L[End Journey]
+</code></pre><h3 id="1a29ae79-44c6-8094-8fc1-d6087e80d3ae" class=""><strong>B. AI Agent Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-80a2-a9e7-f3f87bb4af7e" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[Ticket Reception] --&gt; B[Context Analysis]
+    B --&gt; C[Knowledge Base Search]
+    C --&gt; D{Can Resolve?}
+    D --&gt;|Yes| E[Propose Solution]
+    D --&gt;|No| F[Escalate to Human]
+    E --&gt; G[Update Ticket]
+    F --&gt; G
+    G --&gt; H[Learning Update]
+</code></pre><h3 id="1a29ae79-44c6-8096-ac1b-d89ecbe017b1" class=""><strong>C. Human Agent Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-809e-82be-ecab9c50e748" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[Receive Escalation] --&gt; B[Review AI Analysis]
+    B --&gt; C[Access Customer History]
+    C --&gt; D[Engage Customer]
+    D --&gt; E{Resolution Found?}
+    E --&gt;|Yes| F[Document Solution]
+    E --&gt;|No| G[Escalate to Specialist]
+    F --&gt; H[Update Knowledge Base]
+    G --&gt; H
+</code></pre><h3 id="1a29ae79-44c6-8061-a34c-d754df2d1962" class=""><strong>D. Administrator Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-808b-8737-cd14c02d26ee" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[System Access] --&gt; B[Monitor Metrics]
+    B --&gt; C[Review AI Performance]
+    C --&gt; D[Analyze Reports]
+    D --&gt; E{Issues Found?}
+    E --&gt;|Yes| F[Implement Changes]
+    E --&gt;|No| G[Regular Updates]
+    F --&gt; H[Document Updates]
+    G --&gt; H
+</code></pre><h2 id="1a29ae79-44c6-8030-805f-dfa357f38fee" class=""><strong>IX. End-to-End Role Journeys</strong></h2><h3 id="1a29ae79-44c6-80bb-aede-c240b8b40445" class=""><strong>A. Super Admin Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-80b5-afc3-d90c056e249a" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[Login to Admin Portal] --&gt; B[System Overview Dashboard]
+    B --&gt; C[Monitor System Health]
+    C --&gt; D{Issues Detected?}
+    D --&gt;|Yes| E[Review Alerts]
+    D --&gt;|No| F[Routine Tasks]
+    E --&gt; G[Implement Solutions]
+    F --&gt; H[Configure System]
+    G --&gt; I[Update Documentation]
+    H --&gt; I
+    I --&gt; J[Review Analytics]
+    J --&gt; K[Generate Reports]
+    K --&gt; L[Plan Improvements]
+</code></pre><h3 id="1a29ae79-44c6-801c-b6b8-d18ebd06f587" class=""><strong>Key Touchpoints:</strong></h3><ol type="1" id="1a29ae79-44c6-80eb-9433-e2d4c1c42e4a" class="numbered-list" start="1"><li><strong>System Access</strong><ul id="1a29ae79-44c6-80e1-9f0a-ec47fff1b1c5" class="bulleted-list"><li style="list-style-type:disc">Multi-factor authentication</li></ul><ul id="1a29ae79-44c6-8008-9723-d35a8f653fbd" class="bulleted-list"><li style="list-style-type:disc">Privileged access management</li></ul><ul id="1a29ae79-44c6-80e5-b306-e43b0412db22" class="bulleted-list"><li style="list-style-type:disc">Session monitoring</li></ul></li></ol><ol type="1" id="1a29ae79-44c6-8011-a8f2-f14f9dcb4b32" class="numbered-list" start="2"><li><strong>Configuration Management</strong><ul id="1a29ae79-44c6-8032-bb17-d8b922e6353f" class="bulleted-list"><li style="list-style-type:disc">System settings optimization</li></ul><ul id="1a29ae79-44c6-8061-9869-d0243dacc79c" class="bulleted-list"><li style="list-style-type:disc">Integration management</li></ul><ul id="1a29ae79-44c6-8065-9b67-e0ddbc0a638a" class="bulleted-list"><li style="list-style-type:disc">Security parameter updates</li></ul></li></ol><ol type="1" id="1a29ae79-44c6-804a-9a0d-f1860ce70f4d" class="numbered-list" start="3"><li><strong>User Administration</strong><ul id="1a29ae79-44c6-80a8-b012-e72fd8ed3ee6" class="bulleted-list"><li style="list-style-type:disc">Role assignment</li></ul><ul id="1a29ae79-44c6-80ed-a76b-c324659be935" class="bulleted-list"><li style="list-style-type:disc">Permission management</li></ul><ul id="1a29ae79-44c6-80de-a989-c2c9961d9dd4" class="bulleted-list"><li style="list-style-type:disc">Department structure setup</li></ul></li></ol><ol type="1" id="1a29ae79-44c6-80cd-9c51-cf4fc1e1455b" class="numbered-list" start="4"><li><strong>Compliance Management</strong><ul id="1a29ae79-44c6-8076-aeb1-dd76a07384e2" class="bulleted-list"><li style="list-style-type:disc">Policy enforcement</li></ul><ul id="1a29ae79-44c6-809c-95e2-f7e7b2c9a3bf" class="bulleted-list"><li style="list-style-type:disc">Audit log review</li></ul><ul id="1a29ae79-44c6-8056-8a04-d5a758811526" class="bulleted-list"><li style="list-style-type:disc">Security assessment</li></ul></li></ol><h3 id="1a29ae79-44c6-80be-9190-f2a610a5266f" class=""><strong>B. Admin Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-8090-878d-ff7207f5cea2" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[Department Login] --&gt; B[Team Dashboard]
+    B --&gt; C[Review Queue Status]
+    C --&gt; D[Monitor Agent Performance]
+    D --&gt; E{Issues Found?}
+    E --&gt;|Yes| F[Implement Solutions]
+    E --&gt;|No| G[Regular Updates]
+    F --&gt; H[Document Changes]
+    G --&gt; H
+    H --&gt; I[Generate Reports]
+    I --&gt; J[Update Procedures]
+</code></pre><h3 id="1a29ae79-44c6-807d-bc29-d6cd8d57a93a" class=""><strong>Key Touchpoints:</strong></h3><ol type="1" id="1a29ae79-44c6-80e6-a856-f0ca0ae75841" class="numbered-list" start="1"><li><strong>Team Management</strong><ul id="1a29ae79-44c6-800e-9182-f76051f2eb3a" class="bulleted-list"><li style="list-style-type:disc">Performance monitoring</li></ul><ul id="1a29ae79-44c6-80a8-9d97-f21132502e86" class="bulleted-list"><li style="list-style-type:disc">Resource allocation</li></ul><ul id="1a29ae79-44c6-8069-ac0d-c6ba7a81ff83" class="bulleted-list"><li style="list-style-type:disc">Training coordination</li></ul></li></ol><ol type="1" id="1a29ae79-44c6-805a-8a98-f3080b9a5e20" class="numbered-list" start="2"><li><strong>Operational Oversight</strong><ul id="1a29ae79-44c6-8086-bc61-d6591f008404" class="bulleted-list"><li style="list-style-type:disc">Queue management</li></ul><ul id="1a29ae79-44c6-8085-aeb5-cafbb04b69c2" class="bulleted-list"><li style="list-style-type:disc">Quality assurance</li></ul><ul id="1a29ae79-44c6-80e8-abb1-dd9d684ae45e" class="bulleted-list"><li style="list-style-type:disc">Process optimization</li></ul></li></ol><h3 id="1a29ae79-44c6-8041-9860-d4adea5c5c4b" class=""><strong>C. Agent Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-80b3-9945-d86bf64b8337" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[Agent Login] --&gt; B[Check Queue]
+    B --&gt; C[Handle Interactions]
+    C --&gt; D{Resolution Found?}
+    D --&gt;|Yes| E[Close Ticket]
+    D --&gt;|No| F[Escalate Issue]
+    E --&gt; G[Update Records]
+    F --&gt; G
+    G --&gt; H[Review Performance]
+    H --&gt; I[Complete Training]
+</code></pre><h3 id="1a29ae79-44c6-808b-96f7-d6879da9d2c2" class=""><strong>Key Touchpoints:</strong></h3><ol type="1" id="1a29ae79-44c6-80d7-aecc-c27aac63647f" class="numbered-list" start="1"><li><strong>Customer Interaction</strong><ul id="1a29ae79-44c6-802f-8f9b-d768f5be1d64" class="bulleted-list"><li style="list-style-type:disc">Ticket management</li></ul><ul id="1a29ae79-44c6-8098-9422-daaf5133680e" class="bulleted-list"><li style="list-style-type:disc">Communication handling</li></ul><ul id="1a29ae79-44c6-80b6-ba05-e8c65f186577" class="bulleted-list"><li style="list-style-type:disc">Resolution tracking</li></ul></li></ol><ol type="1" id="1a29ae79-44c6-80e7-aa4a-d0ffc0437cc7" class="numbered-list" start="2"><li><strong>Personal Development</strong><ul id="1a29ae79-44c6-80f4-b11c-fa41b2e758d0" class="bulleted-list"><li style="list-style-type:disc">Performance review</li></ul><ul id="1a29ae79-44c6-8001-8f15-ff2255552c3d" class="bulleted-list"><li style="list-style-type:disc">Skill enhancement</li></ul><ul id="1a29ae79-44c6-805e-b6fd-d48516daeecf" class="bulleted-list"><li style="list-style-type:disc">Knowledge acquisition</li></ul></li></ol><h3 id="1a29ae79-44c6-8089-bd1e-fb6b34e1d052" class=""><strong>D. Customer Journey</strong></h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a29ae79-44c6-804d-a70a-cb2011834714" class="code"><code class="language-Mermaid" style="white-space:pre-wrap;word-break:break-all">flowchart TD
+    A[Access Portal] --&gt; B[Select Issue Type]
+    B --&gt; C[AI Assistant]
+    C --&gt; D{Issue Resolved?}
+    D --&gt;|Yes| E[Close Ticket]
+    D --&gt;|No| F[Human Agent]
+    E --&gt; G[Provide Feedback]
+    F --&gt; H[Resolution Process]
+    H --&gt; G
+    G --&gt; I[Update History]
+</code></pre><h3 id="1a29ae79-44c6-80f8-851e-d369a167b0b0" class=""><strong>Key Touchpoints:</strong></h3><ol type="1" id="1a29ae79-44c6-80fd-9dbe-ecc8e5ffcbb1" class="numbered-list" start="1"><li><strong>Support Access</strong><ul id="1a29ae79-44c6-8071-911a-ee4f67522c26" class="bulleted-list"><li style="list-style-type:disc">Issue submission</li></ul><ul id="1a29ae79-44c6-80bc-bf02-f51a1b42e1be" class="bulleted-list"><li style="list-style-type:disc">Self-service options</li></ul><ul id="1a29ae79-44c6-80d7-8248-e425098e069d" class="bulleted-list"><li style="list-style-type:disc">Communication channels</li></ul></li></ol><ol type="1" id="1a29ae79-44c6-80c3-95f1-e4b6cd6bc160" class="numbered-list" start="2"><li><strong>Resolution Process</strong><ul id="1a29ae79-44c6-8061-8760-c9425834ca1f" class="bulleted-list"><li style="list-style-type:disc">AI interaction</li></ul><ul id="1a29ae79-44c6-80b7-a1ad-eb5e310a1788" class="bulleted-list"><li style="list-style-type:disc">Agent assistance</li></ul><ul id="1a29ae79-44c6-8016-9616-e2a7e97ad2a7" class="bulleted-list"><li style="list-style-type:disc">Feedback provision</li></ul></li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1a29ae79-44c6-80f0-bddf-de9c8c05f19e"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="1a29ae79-44c6-8067-9d76-c718957a676a" class="">This document represents the current state of Symflowise platform planning and is subject to updates. All features, timelines, and specifications are subject to change without notice. Please refer to the latest version for the most up-to-date information.</p></div></figure><hr id="1a29ae79-44c6-8079-87a3-cf431bbe43dd"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
