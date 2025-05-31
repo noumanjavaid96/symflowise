@@ -277,7 +277,7 @@ graph TD
         TOOL_LANG[Multi-Language Options]
         TOOL_VIVR[Visual IVR]
     end
-    
+
     F --> Z([Goal: Positive Customer Experience]);
     K --> Z;
     F_CB --> Z_PARTIAL([Goal: Support Request Acknowledged/In Progress]);
@@ -391,12 +391,12 @@ graph TD
         R1 --> OUT_ESCALATED([Outcome: Issue Escalated Internally]);
         S1 --> OUT_FOLLOWUP([Outcome: Follow-up Scheduled]);
         Q_IN_PROG --> OUT_INPROGRESS([Outcome: Interaction Logged, Pending Follow-up/Resolution]);
-        
+
         OUT_RESOLVED --> GOAL1[Goal: Efficient & Effective Resolution (FCR, Handle Time)];
         OUT_RESOLVED --> GOAL2[Goal: Excellent Customer Service (CSAT)];
         OUT_RESOLVED --> GOAL3[Goal: Achieve Performance Targets];
     end
-    
+
     classDef initiation fill:#f9f,stroke:#333,stroke-width:2px;
     classDef ticket_handling fill:#ccf,stroke:#333,stroke-width:2px;
     classDef interaction_resolution fill:#cfc,stroke:#333,stroke-width:2px;
@@ -462,7 +462,7 @@ graph TD
         L_GUIDE -- No / Not Applicable --> M;
         L1 --> M;
         K -- High Complexity, Low Confidence --> P(Needs Human Escalation);
-        
+
         M --> N{Issue Resolved by AI?};
         N -- Yes --> O([Outcome: Query Resolved by AI, Ticket Logged/Closed]);
         N -- No --> P;
@@ -470,11 +470,11 @@ graph TD
         P --> P_USER_REQ{User Explicitly Requests Human?};
         P_USER_REQ -- Yes --> Q(Escalate to Human Agent);
         P_USER_REQ -- No --> P_SENTIMENT;
-        
+
         P_SENTIMENT{Sentiment Highly Negative?};
         P_SENTIMENT -- Yes --> Q;
         P_SENTIMENT -- No --> R{Compliance Review Needed for Response?};
-        
+
         R -- Yes --> R1[AI Drafts Response];
         R1 --> R2[Routes to Human Reviewer];
         R2 --> R3{Response Approved?};
@@ -584,7 +584,7 @@ graph TD
         D_WF -- No --> E;
         D3 --> E;
     end
-    
+
     subgraph "Monitoring & Reporting"
         E[Accesses Analytics Dashboard];
         E --> E1[Monitors Platform Usage, Agent Performance, KPIs];
@@ -717,7 +717,7 @@ graph TD
         E_ADJ_PROCESS -- No --> F_END_SUPERVISOR_CYCLE;
         E5 --> F_END_SUPERVISOR_CYCLE;
     end
-    
+
     subgraph "Workforce Management (Optional)"
         F_END_SUPERVISOR_CYCLE --> F_WFM{Involved in Workforce Management? <br>(AI Workload Forecasting, Skill Matching)};
         F_WFM -- Yes --> F1[Participates in WFM Activities];
@@ -815,13 +815,13 @@ graph TD
         K -- Yes --> K1[Modifies Scripting, Targeting, or Follow-up Logic];
         K1 --> H; % Loop back to monitoring
         K -- No --> L;
-        
+
         L --> L_PAUSE{Pause/Stop Campaign?};
         L_PAUSE -- Yes --> L1[Halts Campaign];
         L_PAUSE -- No --> H; % Continue monitoring or end
         L1 --> M_END_CAMPAIGN([Outcome: Campaign Halted/Completed]);
     end
-    
+
     H -- Campaign Ends/Scheduled Stop --> M_END_CAMPAIGN;
 
 
