@@ -1,9 +1,17 @@
 {
-  "version": 2,
   "builds": [
-    { "src": "*.html", "use": "@vercel/static" }
+    {
+      "src": "main.ts",
+      "use": "@vercel/deno",
+      "config": {
+        "deploymentType": "node"
+      }
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "main.ts"
+    }
   ]
 }
