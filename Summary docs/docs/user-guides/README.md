@@ -23,7 +23,7 @@ graph TD
 
     E --> F{Issue Resolved by AI?};
     F -- Yes --> G[End: Resolved by AI];
-    F -- No --> HNeeds Human Assistance;
+    F -- No --> H(Needs Human Assistance);
 
     subgraph Escalation [Seamless Escalation]
         H --> I[Context + CRM Data Transferred];
