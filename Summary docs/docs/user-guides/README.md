@@ -29,7 +29,7 @@ graph TD
         H --> I[Context + CRM Data Transferred];
     end
 
-    I --> JHuman Agent Engages;
+    I --> J(Human Agent Engages);
 
     subgraph Human Agent Handling [CRM Integration Benefits]
         J --> K[Reviews Transferred Context <br>& Integrated CRM Data];
