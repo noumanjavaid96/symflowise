@@ -13,7 +13,7 @@ The Symflowise.ai platform is designed for several key user roles, each with dis
 
 ```mermaid
 graph TD
-    A[Customer Initiates via <br>Web Chat / Voice / Portal <br>Multi-Channel] --> BAI Agent Engages;
+    A[Customer Initiates via <br>Web Chat / Voice / Portal <br>Multi-Channel] --> (BAI Agent Engages);
 
     subgraph AI Processing [AI Efficiency]
         B --> C{Understands Query NLU};
