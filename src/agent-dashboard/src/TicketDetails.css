@@ -1,0 +1,50 @@
+.ticket-details-container {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  background-color: #5a6268;
+}
+
+.ticket-info {
+  margin-bottom: 20px;
+}
+
+.ticket-info p {
+  margin: 5px 0;
+}
+
+.conversation-history {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.conversation-history .message {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.conversation-history .message.customer {
+  background-color: #e1ffc7;
+  text-align: left;
+}
+
+.conversation-history .message.agent {
+  background-color: #f1f1f1;
+  text-align: left;
+}
