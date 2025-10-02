@@ -1,0 +1,9 @@
+{
+  "keywords": {
+    "login": "Have you tried resetting your password? You can do so by clicking the 'Forgot Password' link on the login page.",
+    "password": "You can reset your password by visiting the login page and clicking the 'Forgot Password' link.",
+    "billing": "For billing inquiries, please navigate to the 'Billing' section in your account settings or contact our support team directly through the ticket form.",
+    "feature": "You can submit a feature request through our official form. We appreciate your feedback!",
+    "default": "Thank you for reaching out. A support agent will get back to you shortly."
+  }
+}
