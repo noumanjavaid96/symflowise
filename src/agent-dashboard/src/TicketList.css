@@ -1,0 +1,29 @@
+.ticket-list-container {
+  margin: 20px;
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-table th,
+.ticket-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.ticket-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.ticket-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ticket-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
